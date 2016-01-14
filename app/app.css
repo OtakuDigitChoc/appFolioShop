@@ -22,6 +22,10 @@ STRUCTURE
     margin-top: -10px;
 }
 
+body {
+    background: url("img/fond.jpg") 0% 0% / cover no-repeat;
+}
+
 header {
     height: 150px;
 }
@@ -494,6 +498,9 @@ MEDIA QUERIES
         clear: both;
         width: 100%;
         text-align: center;
+    }
+    .nav {
+        visibility: hidden;
     }
     form input {
         width: 90%;
