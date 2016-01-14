@@ -2,20 +2,25 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="appFolio" class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="appFolio" class="no-js">
+<!--<![endif]-->
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+    <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
-<body background="img/fond.jpg">
-  <div id="bloc_page">
+
+<body>
+    <div id="bloc_page">
+        <header>
             <div id="person">
                 <p>
                     Pour nous contacter,
@@ -35,7 +40,8 @@
                     <li><a href="#/contact" id="contact">contact</a></li>
                 </ul>
             </nav>
-            <!--[if lt IE 7]>
+        </header>
+        <!--[if lt IE 7]>
                 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             <![endif]-->
             <div ng-view></div>
@@ -43,6 +49,7 @@
                 <h3>Panier</h3>
                 <ul ng-repeat="article in panier" ng-change='panier'>
                     <li itemprop="name">Ref : {{article.ref}} Prix : {{article.price}}</li>
+                    <p><a ng-click="removeItem(item.id)" class="listePanier">&#10007;</a></p>
                 </ul>
                 <h4>Total :{{totalPrice() | number:2}}</h4>
                 <button onclick="window.location.href='#commande'">Commander</button>
@@ -65,13 +72,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
     <script src="http://code.angularjs.org/1.2.0rc1/angular-animate.min.js"></script>
     <script src="http://code.angularjs.org/1.2.0rc1/angular-touch.min.js"></script>
-  <script src="app.js"></script>
-  <script src="home/home.js"></script>
-  <script src="contact/contact.js"></script>
-  <script src="commande/commande.js"></script>
-  <script src="listeCommandes/listeCommandes.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
+    <script src="app.js"></script>
+    <script src="home/home.js"></script>
+    <script src="contact/contact.js"></script>
+    <script src="commande/commande.js"></script>
+    <script src="listeCommandes/listeCommandes.js"></script>
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
 </body>
+
 </html>

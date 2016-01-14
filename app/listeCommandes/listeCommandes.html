@@ -1,47 +1,41 @@
 <section>
-  <table ng-repeat = "commande in commandes">
-          <tr>
-              <th>Numero de commande</th>
-              <th>Nom</th>
-              <th>Prenom</th>
-              <th>Ville</th>
-          </tr>
-          <tr>
-              <td>{{commande.num}}</td>
-              <td>{{commande.nom}}</td>
-              <td>{{commande.prenom}}</td>
-              <td>{{commande.ville}}</td>
-          </tr>
-          <tr>
-            <th>
-
+    <h3>(Admin) Liste des commandes</h3>
+    <table ng-repeat="commande in commandes">
+        <tr>
+            <th>Numero de commande</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Ville</th>
+        </tr>
+        <tr>
+            <td>{{commande.num}}</td>
+            <td>{{commande.nom}}</td>
+            <td>{{commande.prenom}}</td>
+            <td>{{commande.ville}}</td>
+        </tr>
+        <tr>
+            <th colspan="4">
+                Contenu de la commande
             </th>
-            <th>
-              Contenu de la commande
-            </th>
-            <th>
-
-            </th>
-            <th></th>
-          </tr>
-          <tr>
-            <td></td>
-            <td>
-              <p ng-repeat = "article in commande.panier">
-                Ref :{{article.Ref}} - {{article.Prix}}
-              </p>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <ul>
+                    <li ng-repeat="article in commande.panier">
+                        Ref :{{article.Ref}} - {{article.Prix}}
+                    </li>
+                </ul>
             </td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>
-              Total
+        </tr>
+        <tr>
+            <th colspan="4">
+                Total
             </th>
-          </tr>
-          <tr>
-            <th>
-              {{commande.total}}
-            </th>
-          </tr>
-  </table>
+        </tr>
+        <tr>
+            <td colspan="4">
+                {{commande.total}}
+            </td>
+        </tr>
+    </table>
 </section>

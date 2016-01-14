@@ -22,6 +22,10 @@ STRUCTURE
     margin-top: -10px;
 }
 
+body {
+    background: url("img/fond.jpg") 0% 0% / cover no-repeat;
+}
+
 header {
     height: 150px;
 }
@@ -138,6 +142,20 @@ aside ul {
     color: #8E8E8E;
 }
 
+aside ul p {
+    display: inline;
+}
+
+aside ul p a:hover {
+    cursor: pointer;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+aside ul li {
+    display: inline;
+}
+
 aside h4 {
     margin-left: 54%;
     margin-bottom: 4%;
@@ -148,6 +166,12 @@ aside button {
     margin-top: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
+}
+
+.listePanier {
+    margin-left: 5px;
+    text-decoration: none;
+    color: red;
 }
 
 section p,
@@ -171,7 +195,11 @@ footer {
 footer p {
     padding-top: 15px;
     color: #8E8E8E;
+}
+
+footer p a {
     text-decoration: none;
+    color: grey;
 }
 
 footer h5 {
@@ -218,38 +246,41 @@ th {
 
 table ul {
     list-style-type: none;
+    margin-right: 40px;
 }
 
-
 .menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
 }
 
 .menu:before {
-  content: "[";
+    content: "[";
 }
 
 .menu:after {
-  content: "]";
+    content: "]";
 }
 
 .menu > li {
-  display: inline;
+    display: inline;
 }
 
 .menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+    content: "|";
+    padding-right: 0.3em;
 }
 
 .menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+    content: "";
+    padding: 0;
 }
+
+
 /*galery*/
+
 .arrow {
     cursor: pointer;
     display: block;
@@ -261,23 +292,27 @@ table ul {
     width: 64px;
     z-index: 5;
 }
+
 .arrow.prev {
     background-image: url("img/prev.png");
     left: 20px;
     opacity: 0.5;
     transition: all 0.2s linear 0s;
 }
+
 .arrow.next {
     background-image: url("img/next.png");
     opacity: 0.5;
     right: 20px;
     transition: all 0.2s linear 0s;
 }
-.arrow.prev:hover{
-    opacity:1;
+
+.arrow.prev:hover {
+    opacity: 1;
 }
-.arrow.next:hover{
-    opacity:1;
+
+.arrow.next:hover {
+    opacity: 1;
 }
 
 .nav {
@@ -293,6 +328,7 @@ table ul {
     width: 100%;
     z-index: 5;
 }
+
 .nav li {
     border: 5px solid #AAAAAA;
     border-radius: 5px;
@@ -303,9 +339,11 @@ table ul {
     position: relative;
     width: 50px;
 }
+
 .nav li.active {
     border: 5px solid #FFFFFF;
 }
+
 .nav li img {
     width: 100%;
     height: 100%;
@@ -318,22 +356,20 @@ table ul {
     margin: 20px auto;
     position: relative;
     /*width: 800px;*/
-
     width: 640px;
     height: 450px;
-
     -webkit-perspective: 1000px;
     -moz-perspective: 1000px;
     -ms-perspective: 1000px;
     -o-perspective: 1000px;
     perspective: 1000px;
-
     -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     -ms-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
+
 .slide {
     position: absolute;
     top: 0;
@@ -341,38 +377,135 @@ table ul {
     width: 640px;
     height: 450px;
 }
+
 .slide.ng-hide-add {
-    opacity:1;
-
-    -webkit-transition:1s linear all;
-    -moz-transition:1s linear all;
-    -o-transition:1s linear all;
-    transition:1s linear all;
-
+    opacity: 1;
+    -webkit-transition: 1s linear all;
+    -moz-transition: 1s linear all;
+    -o-transition: 1s linear all;
+    transition: 1s linear all;
     -webkit-transform: rotateX(50deg) rotateY(30deg);
     -moz-transform: rotateX(50deg) rotateY(30deg);
     -ms-transform: rotateX(50deg) rotateY(30deg);
     -o-transform: rotateX(50deg) rotateY(30deg);
     transform: rotateX(50deg) rotateY(30deg);
-
     -webkit-transform-origin: right top 0;
     -moz-transform-origin: right top 0;
     -ms-transform-origin: right top 0;
     -o-transform-origin: right top 0;
     transform-origin: right top 0;
 }
-.slide.ng-hide-add.ng-hide-add-active {
-    opacity:0;
-}
-.slide.ng-hide-remove {
-    -webkit-transition:1s linear all;
-    -moz-transition:1s linear all;
-    -o-transition:1s linear all;
-    transition:1s linear all;
 
-    display:block!important;
-    opacity:0;
+.slide.ng-hide-add.ng-hide-add-active {
+    opacity: 0;
 }
-.slide, .slide.ng-hide-remove.ng-hide-remove-active {
-    opacity:1;
+
+.slide.ng-hide-remove {
+    -webkit-transition: 1s linear all;
+    -moz-transition: 1s linear all;
+    -o-transition: 1s linear all;
+    transition: 1s linear all;
+    display: block!important;
+    opacity: 0;
+}
+
+.slide,
+.slide.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+}
+
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+
+
+/* for 980px or less */
+
+@media screen and (max-width: 980px) {
+    #bloc_page {
+        width: 94%;
+    }
+    section {
+        width: 63%;
+    }
+    section .slide {
+        width: 100%;
+    }
+    section .slider {
+        width: 93%;
+    }
+    section button {
+        margin-left: 0px;
+        display: inline;
+    }
+    section #info {
+        margin-left: 0px;
+        float: none;
+    }
+    section iframe {
+        float: none;
+    }
+    aside {
+        text-align: center;
+        width: 30%;
+    }
+    aside h4 {
+        margin-left: 0%
+    }
+    aside button {
+        float: none;
+    }
+    form label {
+        text-align: center;
+    }
+}
+
+
+/* for 700px or less */
+
+@media screen and (max-width: 700px) {
+    section,
+    aside,
+    footer {
+        width: auto;
+        float: none;
+    }
+    header {
+        height: 200px;
+    }
+    nav {
+        width: 100%;
+    }
+    nav ul li {
+        width: 30%;
+    }
+    nav ul li a {
+        border: none;
+    }
+    section iframe {
+        width: 90%;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 0.9rem;
+    }
+    #person,
+    #logo {
+        clear: both;
+        width: 100%;
+        text-align: center;
+    }
+    .nav {
+        visibility: hidden;
+    }
+    form input {
+        width: 90%;
+    }
+    th,
+    td {
+        font-size: 0.8rem;
+    }
 }
