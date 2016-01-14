@@ -138,6 +138,20 @@ aside ul {
     color: #8E8E8E;
 }
 
+aside ul p {
+    display: inline;
+}
+
+aside ul p a:hover {
+    cursor: pointer;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+aside ul li {
+    display: inline;
+}
+
 aside h4 {
     margin-left: 54%;
     margin-bottom: 4%;
@@ -148,6 +162,12 @@ aside button {
     margin-top: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
+}
+
+.listePanier {
+    margin-left: 5px;
+    text-decoration: none;
+    color: red;
 }
 
 section p,
@@ -387,4 +407,61 @@ table ul {
 .slide,
 .slide.ng-hide-remove.ng-hide-remove-active {
     opacity: 1;
+}
+
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+
+
+/* for 980px or less */
+
+@media screen and (max-width: 980px) {
+    #bloc_page {
+        width: 94%;
+    }
+    section {
+        width: 63%;
+    }
+    section .slide {
+        width: 100%;
+    }
+    section .slider {
+        width: 93%;
+    }
+    section button {
+        float: center;
+    }
+    aside {
+        width: 30%;
+    }
+}
+
+
+/* for 700px or less */
+
+@media screen and (max-width: 700px) {
+    section,
+    aside,
+    footer {
+        width: auto;
+        float: none;
+    }
+    header {
+        height: 200px;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 0.9rem;
+    }
+    /*aside { display: none; }*/
+    #person,
+    #logo {
+        clear: both;
+        width: 100%;
+        text-align: center;
+    }
 }

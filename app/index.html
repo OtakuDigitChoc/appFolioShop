@@ -49,6 +49,7 @@
             <h3>Panier</h3>
             <ul ng-repeat="item in items">
                 <li itemprop="name">Ref : {{item.Ref}} Prix : {{item.Prix}}</li>
+                <p><a ng-click="removeItem(item.id)" class="listePanier">&#10007;</a></p>
             </ul>
             <h4>Total :{{totalPrice() | number:2}}</h4>
             <button onclick="window.location.href='#commande'">Commander</button>
