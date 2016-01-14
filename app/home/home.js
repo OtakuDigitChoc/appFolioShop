@@ -23,7 +23,6 @@ console.log($scope.panier);
 
   		$http.get("http://lpdam.tokidev.fr/WS/product/list").success(function(data) {
         $scope.photos = data;
-        console.log($scope.photos);
   		});
 
     $scope.addItem = function(item) {
@@ -41,12 +40,12 @@ console.log($scope.panier);
 
     $scope.removeItem = function(index){
         $scope.panier.splice(index,1);
+        $localStorage.panier.splice(index,1);
     }
 
     $scope.addPanier = function(index){
       $scope.panier.push($scope.photos[index]);
       $localStorage.panier.push($scope.photos[index]);
-      console.log($scope.panier);
     }
 
     //galery

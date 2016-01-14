@@ -8,10 +8,10 @@
             <th>Ville</th>
         </tr>
         <tr>
-            <td>{{commande.num}}</td>
-            <td>{{commande.nom}}</td>
-            <td>{{commande.prenom}}</td>
-            <td>{{commande.ville}}</td>
+            <td>{{commande.ref}}</td>
+            <td>bou</td>
+            <td>aligator</td>
+            <td>Nice</td>
         </tr>
         <tr>
             <th colspan="4">
@@ -21,8 +21,8 @@
         <tr>
             <td colspan="4">
                 <ul>
-                    <li ng-repeat="article in commande.panier">
-                        Ref :{{article.Ref}} - {{article.Prix}}
+                    <li ng-repeat="product in commande.products">
+                        Ref :{{getRef(product.id)}} - {{getPrice(product.id)}}
                     </li>
                 </ul>
             </td>

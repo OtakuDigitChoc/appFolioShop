@@ -47,9 +47,9 @@
             <div ng-view></div>
             <aside itemscope itemtype="http://schema.org/SiteNavigationElement" ng-controller='home'>
                 <h3>Panier</h3>
-                <ul ng-repeat="article in panier" ng-change='panier'>
+                <ul ng-repeat="article in panier">
                     <li itemprop="name">Ref : {{article.ref}} Prix : {{article.price}}</li>
-                    <p><a ng-click="removeItem(item.id)" class="listePanier">&#10007;</a></p>
+                    <p><a ng-click="removeItem($index)" class="listePanier">&#10007;</a></p>
                 </ul>
                 <h4>Total :{{totalPrice() | number:2}}</h4>
                 <button onclick="window.location.href='#commande'">Commander</button>
