@@ -1,43 +1,57 @@
 'use strict';
 
-angular.module('appFolio.home', [])
+angular.module('appFolio.home', ['ngStorage'])
 
-.controller('home', ['$scope',function($scope) {
+.controller('panier', ['$scope','$http','$localStorage','$rootScope',function($scope,$http,$localStorage,$rootScope) {
+  $scope.panier = $localStorage.panier;
+console.log($scope.panier);
+  $scope.totalPrice = function(){
+    var total=0 ;
+     for(var count=0;count<$scope.panier.length;count++){
+         total += parseFloat($scope.panier[count].price);
+     }
+     return total;
+  }
 
-  $scope.items = [
-        {Ref: "12345_1", Prix: "5.23"},
-        {Ref: "12345_2", Prix: "5.23"},
-        {Ref: "12345_3", Prix: "5.23"}
-    ];
+}])
+
+.controller('home', ['$scope','$http','$localStorage','$rootScope',function($scope,$http,$localStorage,$rootScope) {
+
+  $scope.photos = [];
+  $rootScope.panier = [];
+  $localStorage.panier = [];
+
+  		$http.get("http://lpdam.tokidev.fr/WS/product/list").success(function(data) {
+        $scope.photos = data;
+        console.log($scope.photos);
+  		});
 
     $scope.addItem = function(item) {
-        $scope.items.push(item);
-        $scope.item = {};
+        $scope.photos.push(item);
+        $scope.photos = {};
     }
 
     $scope.totalPrice = function(){
       var total=0 ;
-       for(var count=0;count<$scope.items.length;count++){
-           total += parseFloat($scope.items[count].Prix);
+       for(var count=0;count<$scope.panier.length;count++){
+           total += parseFloat($scope.panier[count].price);
        }
        return total;
     }
 
     $scope.removeItem = function(index){
-        $scope.items.splice(index,1);
+        $scope.panier.splice(index,1);
+    }
+
+    $scope.addPanier = function(index){
+      $scope.panier.push($scope.photos[index]);
+      $localStorage.panier.push($scope.photos[index]);
+      console.log($scope.panier);
     }
 
     //galery
 
     // Set of Photos
-    $scope.photos = [
-        {src: 'img/photos/photo_1.jpg', desc: 'Image 01'},
-        {src: 'img/photos/photo_2.jpg', desc: 'Image 02'},
-        {src: 'img/photos/photo_3.jpg', desc: 'Image 03'},
-        {src: 'img/photos/photo_4.jpg', desc: 'Image 04'},
-        {src: 'img/photos/photo_5.jpg', desc: 'Image 05'},
-        {src: 'img/photos/photo_6.jpg', desc: 'Image 06'}
-    ];
 
     // initial image index
     $scope._Index = 0;
