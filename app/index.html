@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="appFolio" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body background="img/fond.jpg">
+  <div id="bloc_page">
+            <div id="person">
+                <p>
+                    Pour nous contacter,
+                    <br />
+                    <span itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                            <span itemprop="telephone">Tél : 04.93.xx.xx.xx</span>
+                    <br />
+                    </span>
+                    <span itemprop="email">E-mail : contact@folio.com</span>
+                </p>
+            </div>
+            <div id="logo"><img src="img/logo.png" alt="LP DAM" title="LP DAM" itemprop="image" /></div>
+            <nav>
+                <ul>
+                    <li><a href="#/home" id="accueil">accueil</a></li>
+                    <li><a href="#/commande" id="commande">panier</a></li>
+                    <li><a href="#/contact" id="contact">contact</a></li>
+                </ul>
+            </nav>
+            <!--[if lt IE 7]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+              <div ng-view></div>
+            <aside itemscope itemtype="http://schema.org/SiteNavigationElement" ng-controller="home">
+                <h3>Panier</h3>
+                <ul ng-repeat="item in items">
+                    <li itemprop="name">Ref : {{item.Ref}} Prix : {{item.Prix}}</li>
+                </ul>
+                <h4>Total :{{totalPrice() | number:2}}</h4>
+                <button onclick="window.location.href='#commande'">Commander</button>
+            </aside>
+            <footer>
+                <p><a href="#/listeCommandes">Accéder à la liste des commandes</a></p>
+                <h5>(c)LP DAM - 2016</h5>
+            </footer>
+            </div>
+
+
+
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="http://code.angularjs.org/1.2.0rc1/angular-animate.min.js"></script>
+    <script src="http://code.angularjs.org/1.2.0rc1/angular-touch.min.js"></script>
+  <script src="app.js"></script>
+  <script src="home/home.js"></script>
+  <script src="contact/contact.js"></script>
+  <script src="commande/commande.js"></script>
+  <script src="listeCommandes/listeCommandes.js"></script>
+  <script src="components/version/version.js"></script>
+  <script src="components/version/version-directive.js"></script>
+  <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>

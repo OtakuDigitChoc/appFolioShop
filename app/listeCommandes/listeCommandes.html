@@ -1,0 +1,47 @@
+<section>
+  <table ng-repeat = "commande in commandes">
+          <tr>
+              <th>Numero de commande</th>
+              <th>Nom</th>
+              <th>Prenom</th>
+              <th>Ville</th>
+          </tr>
+          <tr>
+              <td>{{commande.num}}</td>
+              <td>{{commande.nom}}</td>
+              <td>{{commande.prenom}}</td>
+              <td>{{commande.ville}}</td>
+          </tr>
+          <tr>
+            <th>
+
+            </th>
+            <th>
+              Contenu de la commande
+            </th>
+            <th>
+
+            </th>
+            <th></th>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p ng-repeat = "article in commande.panier">
+                Ref :{{article.Ref}} - {{article.Prix}}
+              </p>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <th>
+              Total
+            </th>
+          </tr>
+          <tr>
+            <th>
+              {{commande.total}}
+            </th>
+          </tr>
+  </table>
+</section>

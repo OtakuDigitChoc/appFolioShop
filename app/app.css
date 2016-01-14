@@ -1,0 +1,378 @@
+/* app css stylesheet */
+
+html {
+    font: 16px Arial, Helvetica, sans-serif;
+    font-size: 100%;
+}
+
+h1 {
+    font: bold 36px Arial, Helvetica, sans-serif;
+}
+
+
+/************************************************************************************
+STRUCTURE
+*************************************************************************************/
+
+#bloc_page {
+    width: 960px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 0 0 10px 10px;
+    margin-top: -10px;
+}
+
+header {
+    height: 150px;
+}
+
+section {
+    width: 670px;
+    float: left;
+    clear: both;
+    text-align: center;
+}
+
+aside {
+    width: 230px;
+    float: right;
+    margin-right: 20px;
+}
+
+footer {
+    clear: both;
+}
+
+
+/************************************************************************************
+ELEMENTS
+*************************************************************************************/
+
+header,
+section,
+aside {
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+section,
+aside {
+    border: solid 1px #ccc;
+    border-radius: 10px;
+}
+
+#person {
+    float: right;
+    color: #8E8E8E;
+}
+
+#logo {
+    display: inline-block;
+    float: left;
+    margin-top: 15px;
+}
+
+#logo img {
+    width: 180px;
+    height: 65px;
+}
+
+#photo img {
+    width: 650px;
+    height: 450px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+nav {
+    float: left;
+    display: inline;
+    margin-top: 3%;
+    width: 100%;
+    height: 28px;
+    text-transform: uppercase;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-right: 1px solid;
+    border-color: lightgrey
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    float: left;
+    /*pour IE*/
+}
+
+nav ul li a {
+    display: block;
+    float: left;
+    width: 100px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    /*pour avoir un effet "outset" avec IE :*/
+    border-color: lightgrey;
+}
+
+nav ul li a:hover {
+    background: #80F200;
+    border-color: #696969 #DCDCDC #DCDCDC #696969;
+}
+
+aside h3 {
+    margin-left: 5px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding-left: 0px;
+    margin-left: 5px;
+    color: #8E8E8E;
+}
+
+aside h4 {
+    margin-left: 54%;
+    margin-bottom: 4%;
+}
+
+aside button {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+section p,
+h4 {
+    display: inline;
+}
+
+section button {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 280px;
+}
+
+footer {
+    background-color: #373737;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+footer p {
+    padding-top: 15px;
+    color: #8E8E8E;
+    text-decoration: none;
+}
+
+footer h5 {
+    margin-top: 5px;
+    padding-bottom: 15px;
+    color: white;
+}
+
+label {
+    display: block;
+    width: 250px;
+    float: left;
+}
+
+form input {
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 300px;
+}
+
+button {
+    border-radius: 5px;
+}
+
+iframe {
+    float: right;
+}
+
+section #info {
+    margin-left: 40px;
+    float: left;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+td,
+th {
+    border: 1px solid black;
+    width: 215px;
+}
+
+table ul {
+    list-style-type: none;
+}
+
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+/*galery*/
+.arrow {
+    cursor: pointer;
+    display: block;
+    height: 64px;
+    margin-top: -35px;
+    outline: medium none;
+    position: absolute;
+    top: 50%;
+    width: 64px;
+    z-index: 5;
+}
+.arrow.prev {
+    background-image: url("img/prev.png");
+    left: 20px;
+    opacity: 0.5;
+    transition: all 0.2s linear 0s;
+}
+.arrow.next {
+    background-image: url("img/next.png");
+    opacity: 0.5;
+    right: 20px;
+    transition: all 0.2s linear 0s;
+}
+.arrow.prev:hover{
+    opacity:1;
+}
+.arrow.next:hover{
+    opacity:1;
+}
+
+.nav {
+    bottom: -4px;
+    display: block;
+    height: 48px;
+    left: 0;
+    margin: 0 auto;
+    padding: 1em 0 0.8em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    width: 100%;
+    z-index: 5;
+}
+.nav li {
+    border: 5px solid #AAAAAA;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    height: 30px;
+    margin: 0 8px;
+    position: relative;
+    width: 50px;
+}
+.nav li.active {
+    border: 5px solid #FFFFFF;
+}
+.nav li img {
+    width: 100%;
+    height: 100%;
+}
+
+.slider {
+    border: 15px solid #FFFFFF;
+    border-radius: 5px;
+    /*height: 500px;*/
+    margin: 20px auto;
+    position: relative;
+    /*width: 800px;*/
+
+    width: 640px;
+    height: 450px;
+
+    -webkit-perspective: 1000px;
+    -moz-perspective: 1000px;
+    -ms-perspective: 1000px;
+    -o-perspective: 1000px;
+    perspective: 1000px;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 450px;
+}
+.slide.ng-hide-add {
+    opacity:1;
+
+    -webkit-transition:1s linear all;
+    -moz-transition:1s linear all;
+    -o-transition:1s linear all;
+    transition:1s linear all;
+
+    -webkit-transform: rotateX(50deg) rotateY(30deg);
+    -moz-transform: rotateX(50deg) rotateY(30deg);
+    -ms-transform: rotateX(50deg) rotateY(30deg);
+    -o-transform: rotateX(50deg) rotateY(30deg);
+    transform: rotateX(50deg) rotateY(30deg);
+
+    -webkit-transform-origin: right top 0;
+    -moz-transform-origin: right top 0;
+    -ms-transform-origin: right top 0;
+    -o-transform-origin: right top 0;
+    transform-origin: right top 0;
+}
+.slide.ng-hide-add.ng-hide-add-active {
+    opacity:0;
+}
+.slide.ng-hide-remove {
+    -webkit-transition:1s linear all;
+    -moz-transition:1s linear all;
+    -o-transition:1s linear all;
+    transition:1s linear all;
+
+    display:block!important;
+    opacity:0;
+}
+.slide, .slide.ng-hide-remove.ng-hide-remove-active {
+    opacity:1;
+}

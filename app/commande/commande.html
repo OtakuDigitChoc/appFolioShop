@@ -1,0 +1,27 @@
+<section>
+	<form method="post" action="traitement.php">
+	    <label for="prenom">Prénom</label>
+	    <input type="text" name="prenom" id="prenom" ng-model="prenom" />
+	    <br />
+
+	    <label for="nom">Nom</label>
+	    <input type="text" name="nom" id="nom" ng-model="nom"/>
+	    <br />
+
+	    <label for="adresse">N° / Rue</label>
+	    <input type="text" name="adresse" id="adresse" ng-model="adresse" />
+	    <br />
+
+	    <label for="cp">Code Postal</label>
+	    <input type="number" name="cp" id="cp" ng-model="cp"/>
+	    <br />
+
+	    <label for="ville">Ville</label>
+	    <input type="text" name="ville" id="ville" ng-model="ville" />
+	    <br />
+
+	    <label for="mail">E-mail</label>
+	    <input type="text" name="mail" id="mail" ng-model="mail" />
+	</form>
+	<button ng-click="commander()">Commander</button>
+</section>
